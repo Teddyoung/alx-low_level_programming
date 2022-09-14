@@ -6,7 +6,7 @@
  * not exceeding 4,000,000.
  * Return: 0
  */
-int main(void) 
+int main(void)
 {
 	int i = 1, j = 2, total = 0;
 	int k;
