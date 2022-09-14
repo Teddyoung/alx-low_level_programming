@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (i % 3 == 0)
 
-			total +=i;
+			total += i;
 		else if (i % 5 == 0)
 			total += i;
 
