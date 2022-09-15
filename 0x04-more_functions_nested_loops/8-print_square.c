@@ -17,15 +17,15 @@ void print_square(int size)
 			c = 0;
 			while (c < size)
 			{
-
 				_putchar(35);
 				c++;
 			}
 			_putchar('\n');
 			i++;
 		}
-		else
-		{
-			_putchar('\n');
-		}
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
