@@ -1,38 +1,44 @@
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * *string_nconcat - concatenates 2 strings
- * @s1: pointer to first string
- * @s2: pointer to second string
- * @n: number of bytes to use from s2
- *
- * Return: Apointer to newly created string, else NULL if failure occurs
+ * string_nconcat - A function that concatenates two strings
+ * @s1: An input pointer of the first string
+ * @s2: An input pointer of the second string
+ * @n: an input integer of number of string to concatenate
+ *Return: Apointer to concatened strings or NULL if it str is NULL
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int index, index2, len1, len2;
+	unsigned int i = 0, lens1 = 0, lens2 = 0;
 
-	if (s1 == 0)
+	if (s1 == NULL)
 		s1 = "";
-	if (s2 == 0)
+
+	while (s1[lens1])
+		lens1++;
+
+	if (s2 == NULL)
 		s2 = "";
-	len1 = 0;
-	while (*(s1 + len1))
-		len1++;
-	len2 = 0;
-	while (*(s2 + len2))
-		len2++;
-	if (n >= len2)
-		n = len2;
-	str = malloc(sizeof(char) * (len1 + n + 1));
-	if (str == 0)
-		return (0);
-	for (index = 0; index < len1; index++)
-		*(str + index) = *(s1 + index);
-	for (index2 = 0; index2 < n; index2++, index++)
-		*(str + index) = *(s2 + index2);
-	*(str + index) = '\0';
-	return (str);
+
+	while (s2[lens2])
+		lens2++;
+
+	if (n >= lens2)
+		n = lens2;
+
+	new_str = malloc(lens1 + n + 1);
+	if (new_str == NULL)
+		return (NULL);
+
+	for (; i < (lens1 + n); i++)
+	{
+		if (i < lens1)
+			new_str[i] = *s1, s1++;
+		else
+			new_str[i] = *s2, s2++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }
-	
