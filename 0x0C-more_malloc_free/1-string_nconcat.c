@@ -5,8 +5,8 @@
  * @s1: pointer to first string
  * @s2: pointer to second string
  * @n: number of bytes to use from s2
- * 
- * Return: pointer to newly created string, else NULL if failure occurs
+ *
+ * Return: Apointer to newly created string, else NULL if failure occurs
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
